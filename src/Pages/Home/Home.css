@@ -1,0 +1,11 @@
+.poster {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.title-category {
+  font-size: 3rem;
+  margin: 1rem 0;
+  cursor: default;
+}
