@@ -1,0 +1,30 @@
+.rules-section {
+  border: 2px solid var(--primary-hover);
+  box-shadow: -1px 1px 26px -6px rgba(255, 86, 162, 0.75);
+  -webkit-box-shadow: -1px 1px 26px -6px rgba(255, 86, 162, 0.75);
+  -moz-box-shadow: -1px 1px 26px -6px rgba(255, 86, 162, 0.75);
+  width: 90%;
+  max-width: 786px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: #25252a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rules-title {
+  padding: 0.5rem 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: var(--primary-hover);
+}
+.rules-section h3 {
+  padding: 0.3rem 0;
+  color: var(--primary-hover);
+}
+h3.rules-terms {
+  margin-top: 2rem;
+  color: white;
+}

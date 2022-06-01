@@ -1,0 +1,27 @@
+.quizCard-section {
+  display: flex;
+  flex-flow: row;
+  max-width: 1440px;
+  transition: box-shadow, -webkit-box-shadow, -moz-box-shadow,
+    transform 0.3s ease-out;
+  margin: auto;
+}
+.quizCard-img {
+  width: 30%;
+}
+.quizCard-description {
+  width: 70%;
+  padding: 1rem 2rem;
+  color: var(--primary-color);
+  background-color: var(--bg--gray-900);
+}
+.quizCard-description-title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+.quizCard-description .btn {
+  margin: 1rem 0;
+}
