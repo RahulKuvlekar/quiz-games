@@ -45,29 +45,15 @@ h6 {
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar,
-.row-slider-container::-webkit-scrollbar,
 .main-section::-webkit-scrollbar,
-.navigation-bar::-webkit-scrollbar,
-.sidebar::-webkit-scrollbar,
-.signup::-webkit-scrollbar,
-.explore-section::-webkit-scrollbar,
-.singleVideo-section::-webkit-scrollbar,
-.history-section::-webkit-scrollbar,
-.mainpage-section::-webkit-scrollbar {
+.category-section::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 body,
-.row-slider-container,
 .main-section,
-.navigation-bar,
-.sidebar,
-.signup,
-.explore-section,
-.singleVideo-section,
-.history-section,
-.mainpage-section {
+.category-section {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
