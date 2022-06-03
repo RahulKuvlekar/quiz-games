@@ -46,14 +46,18 @@ h6 {
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar,
 .main-section::-webkit-scrollbar,
-.category-section::-webkit-scrollbar {
+.category-section::-webkit-scrollbar,
+.login::-webkit-scrollbar,
+.signup::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 body,
 .main-section,
-.category-section {
+.category-section,
+.login,
+.signup {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
