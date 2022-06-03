@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ToastProvider } from "./Context/ToastContext";
+import { AuthProvider } from "./Context/AuthContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ToastProvider>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </ToastProvider>
     </BrowserRouter>
   </React.StrictMode>,
