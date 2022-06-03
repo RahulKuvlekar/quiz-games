@@ -1,0 +1,41 @@
+.login,
+.signup {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg--gray-800);
+  padding: 2rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+.form {
+  width: 90%;
+  margin: auto;
+  max-width: 600px;
+  padding: 2rem;
+  color: var(--grey-color-dark);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgb(209, 213, 219) 0px 0px 0px 1px inset;
+  background-color: #ffffff;
+}
+.form .input-label {
+  font-size: 1rem;
+  color: var(--grey-color-dark);
+}
+.signup .form .input-group {
+  margin: 0 auto 0.5rem;
+}
+.form .input-group input {
+  color: var(--grey-color-medium);
+  letter-spacing: 0.1rem;
+}
+.login .btn-success {
+  min-width: 90px;
+}
+.signup .btn-success {
+  min-width: 100px;
+}
