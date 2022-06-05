@@ -69,7 +69,6 @@ const Toast = ({ position, autoDeleteInterval }) => {
             >
               <FaRegWindowClose
                 onClick={() => {
-                  console.log("CLEAR TIMER", timer);
                   if (timer) clearTimeout(timer);
                   deleteToastNotification(notification?.id);
                 }}
