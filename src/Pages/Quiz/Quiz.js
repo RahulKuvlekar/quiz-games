@@ -4,6 +4,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../Firebase/firebase";
 import "./Quiz.css";
 import Rules from "../../Components/Rules/Rules";
+import QuestionBank from "../../Components/QuestionBank/QuestionBank";
 
 const Quiz = () => {
   const [quizData, setQuizData] = useState();
@@ -22,6 +23,8 @@ const Quiz = () => {
 
   const acceptRules = () => setDisplayRules(false);
 
+  const rulesAccepted = useMemo(() => !displayRules, [displayRules]);
+
   useEffect(() => {
     (async () => {
       if (categoryID && quizID) {
@@ -38,9 +41,13 @@ const Quiz = () => {
       }
     })();
   }, [categoryID, quizID]);
+
   return (
     <div className="main-section quiz-section">
       {displayRules && <Rules onAccept={acceptRules} />}
+      {rulesAccepted && (
+        <QuestionBank data={quizData} categoryID={categoryID} quizID={quizID} />
+      )}
     </div>
   );
 };
