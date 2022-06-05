@@ -24,6 +24,7 @@ const CategoryList = () => {
 
   useEffect(() => {
     getData();
+    return () => setCategoryData([]);
   }, []);
 
   return (
