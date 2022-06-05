@@ -1,0 +1,58 @@
+.resultBoard-section {
+  width: 95%;
+  min-height: 80vh;
+  box-shadow: -1px 1px 26px -6px rgba(255, 86, 162, 0.75);
+  -webkit-box-shadow: -1px 1px 26px -6px rgba(255, 86, 162, 0.75);
+  -moz-box-shadow: -1px 1px 26px -6px rgba(255, 86, 162, 0.75);
+  border: 2px solid var(--primary-hover);
+  margin: 1.5rem auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  color: var(--primary-hover);
+}
+
+.resultBoard-heading,
+.resultBoard-calculating {
+  margin: 1.5rem 0;
+}
+.resultBoard-msg {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.resultBoard-msg img {
+  width: 250px;
+  height: 250px;
+}
+.resultBoard-msg h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 1rem 0;
+}
+
+.resultBoard-msg .danger {
+  color: var(--danger-color);
+}
+
+.resultBoard-msg .success {
+  color: var(--success-color);
+}
+
+.resultBoard-score {
+  border: 2px solid white;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #0f040979;
+}
+.resultBoard-score span {
+  font-size: 1.2rem;
+  font-weight: 800;
+  padding-bottom: 1rem;
+  color: white;
+}
+.resultBoard-answer {
+  margin: 1.5rem auto;
+}

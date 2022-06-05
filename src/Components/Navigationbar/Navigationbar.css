@@ -9,21 +9,38 @@
   position: relative;
   z-index: 1000;
 }
+.navigation-bar .nav-mainMenu {
+  justify-content: space-between;
+  min-width: 30%;
+}
 .navigation-bar .nav-menu li {
   margin: 0 0.6rem;
 }
 
-.navigation-bar .nav-menu li a {
+.navigation-bar .nav-menu li a,
+.navigation-bar .nav-mainMenu li a {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--primary-color);
 }
-.navigation-bar .nav-menu li:hover a {
+.navigation-bar .nav-mainMenu li a {
+  margin-right: 1rem;
+}
+.navigation-bar .nav-menu li a:hover,
+.navigation-bar .nav-mainMenu li a:hover {
+  color: var(--primary-hover);
+}
+.navigation-bar .nav-menu .nav-active,
+.navigation-bar .nav-mainMenu .nav-active {
   color: var(--primary-hover);
 }
 
 .navigation-bar .nav-menu .nav-active {
-  color: var(--primary-hover);
   text-underline-offset: 10px;
   text-decoration: underline var(--primary-hover) solid 2px;
+}
+.nav-mainMenu {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
 }

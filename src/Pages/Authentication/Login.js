@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import SmallLoader from "../../Components/UI/SmallLoader/SmallLoader";
 import { ADD_TOAST, DANGER, SUCCESS } from "../../Constant/constant";
 import { useAuthContext } from "../../Hooks/useAuthContext";
@@ -67,7 +67,7 @@ const Login = () => {
   const setDummyCredentials = () => {
     resetHandler();
     setFormValue({
-      email: "rahulkuvlekar@gmail.com",
+      email: "guestuser@urservice.com",
       password: "1234567890",
     });
   };
@@ -88,7 +88,7 @@ const Login = () => {
             } login successfully 🎉`
           ),
         });
-        navigate(FROM);
+        navigate(FROM, { replace: true });
       }
     } catch (error) {
       dispatchToast({
@@ -110,6 +110,7 @@ const Login = () => {
     // eslint-disable-next-line
   }, [isSubmit]);
 
+  if (isAuthenticated) return <Navigate to={FROM} replace />;
   return (
     <div className="login">
       <form action="" className="form form-login" onSubmit={submitHandler}>
