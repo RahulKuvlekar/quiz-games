@@ -11,6 +11,7 @@ const Category = () => {
   const [currentCategory, setCurrentCategory] = useState();
   const [subCategory, setSubCategory] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isImgLoaded, setIsImgLoaded] = useState(false);
   const [error, setError] = useState(false);
   const { categoryID } = useParams();
 
@@ -43,7 +44,9 @@ const Category = () => {
         setLoading(false);
       }
     })();
+    return () => setCurrentCategory();
   }, [categoryID]);
+
   return (
     <div className="category-section">
       {(() => {
@@ -52,30 +55,38 @@ const Category = () => {
         else
           return (
             <>
-              <div className="category-banner">
+              <div className={`category-banner`}>
+                {!isImgLoaded && <Loader />}
                 <img
                   className="category-banner-poster"
                   src={currentCategory?.categoryPoster}
                   alt={currentCategory?.categoryName}
+                  onLoad={() => setIsImgLoaded(true)}
                 />
-                <h1 className="category-banner-description">
-                  Welcome, to <span>“ {currentCategory?.categoryName} ”</span>
-                </h1>
+                {isImgLoaded && (
+                  <h1 className="category-banner-description">
+                    Welcome, to <span>“ {currentCategory?.categoryName} ”</span>
+                  </h1>
+                )}
               </div>
-              <h1 className="page-title page-title-center title-category">
-                Quiz Games List
-              </h1>
-              <section className="quiz-listing">
-                {subCategory.length > 0 &&
-                  subCategory.map((category, idx) => (
-                    <QuizCard
-                      key={category?.id}
-                      quizData={category}
-                      categoryID={categoryID}
-                      reverse={idx % 2 === 0 ? false : true}
-                    />
-                  ))}
-              </section>
+              {isImgLoaded && (
+                <>
+                  <h1 className="page-title page-title-center title-category">
+                    Quiz Games List
+                  </h1>
+                  <section className="quiz-listing">
+                    {subCategory.length > 0 &&
+                      subCategory.map((category, idx) => (
+                        <QuizCard
+                          key={category?.id}
+                          quizData={category}
+                          categoryID={categoryID}
+                          reverse={idx % 2 === 0 ? false : true}
+                        />
+                      ))}
+                  </section>
+                </>
+              )}
             </>
           );
       })()}
