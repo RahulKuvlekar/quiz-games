@@ -14,7 +14,6 @@ const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userLoading, setUserLoading] = useState(null);
 
-  console.log("USER ==>", user);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {

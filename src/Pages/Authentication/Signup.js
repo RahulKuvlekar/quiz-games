@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import { useAuthContext } from "../../Hooks/useAuthContext";
-import { signOutUser, signUpUser } from "../../Utils/authentication";
-// import { GET_SIGNUP } from "../../Constant/constant";
-// import axios from "axios";
+import {
+  signOutUser,
+  signUpUser,
+  updateUserProfile,
+} from "../../Utils/authentication";
 import "./Auth.css";
 import SmallLoader from "../../Components/UI/SmallLoader/SmallLoader";
 import { useToastContext } from "../../Hooks/useToastContext";
@@ -25,6 +27,7 @@ const Signup = () => {
   const { isAuthenticated, userLoading, setUserLoading } = useAuthContext();
   const { dispatchToast } = useToastContext();
   const navigate = useNavigate();
+
   const inputHandler = (event) => {
     const { name, value } = event.target;
     setFormValue((prev) => ({
@@ -86,11 +89,18 @@ const Signup = () => {
       const currentUser = await signUpUser(emailId, password);
       if (currentUser?.user) {
         await signOutUser();
+
         dispatchToast({
           type: ADD_TOAST,
           payload: createToast(INFO, "User Account Created Successfully 🎉"),
         });
-        navigate("/login");
+
+        navigate("/login", { replace: true });
+
+        await updateUserProfile(
+          currentUser?.user,
+          formValue?.firstName + " " + formValue?.lastName
+        );
       }
     } catch (error) {
       setSignupError(error.message);
@@ -111,6 +121,7 @@ const Signup = () => {
     // eslint-disable-next-line
   }, [isSubmit]);
 
+  if (isAuthenticated) return <Navigate to="/" replace />;
   return (
     <div className="signup">
       <form action="" className="form form-login" onSubmit={submitHandler}>
