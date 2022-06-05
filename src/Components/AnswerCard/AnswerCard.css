@@ -1,0 +1,63 @@
+.answerCard-section {
+  width: 95%;
+  min-height: 50vh;
+  border: 2px solid var(--primary-hover);
+  margin: 0 auto 1.5rem;
+  display: flex;
+  flex-flow: row;
+  position: relative;
+}
+.answerCard-img {
+  width: 50%;
+  object-fit: cover;
+}
+.answerCard-description {
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.answerCard-description h2 {
+  margin: 0 0 2rem 0;
+}
+.answerCard-points {
+  background-color: var(--primary-hover);
+  font-weight: 800;
+  padding: 0.8rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.answerCard-options {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+.answerCard-option {
+  width: 70%;
+  margin: auto;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+  border: 2px solid white;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.answerCard-option.correct {
+  color: white;
+  border: 2px solid white;
+  background-color: var(--success-color);
+  transition: background-color 0.3s ease-in;
+}
+.answerCard-option.wrong {
+  color: white;
+  border: 2px solid white;
+  background-color: var(--danger-color);
+  transition: background-color 0.3s ease-in;
+}
