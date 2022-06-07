@@ -76,7 +76,7 @@ const Navigationbar = () => {
         {isAuthenticated && (
           <li>
             <img
-              src="/Images/avatarDefault.svg"
+              src="/Images/avatarDefault.png"
               className="avatar avatar-md"
               alt="loginAvatar"
               onClick={signOutHandler}

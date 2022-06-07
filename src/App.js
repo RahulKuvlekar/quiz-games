@@ -9,6 +9,7 @@ import Signup from "./Pages/Authentication/Signup";
 import Toast from "./Components/UI/Toast/Toast";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import PageNotFound from "./Pages/PageNotFound/PageNotFound";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/category/:categoryID" element={<Category />} />
         <Route
