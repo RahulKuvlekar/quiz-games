@@ -74,9 +74,12 @@ const QuestionBank = ({ data = [], categoryID, quizID }) => {
             quizId: quizID,
             userScore: userScore,
             totalScore: totalsQuestionsCount * 10,
+            result:
+              ((userScore / totalsQuestionsCount) * 10).toFixed(2) >= 70
+                ? "PASS"
+                : "FAILED",
             timestamp: serverTimestamp(),
           };
-          debugger;
           const docRef = doc(db, "Scoreboard", uuidv4());
           await setDoc(docRef, userdata);
         } catch (error) {
