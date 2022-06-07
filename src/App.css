@@ -132,10 +132,7 @@ input[type="range"] {
 .position-absolute {
   position: absolute;
 }
-.app-name {
-  text-underline-offset: 10px;
-  text-decoration: none;
-}
+
 .app-name:hover {
   color: var(--primary-hover);
   transform: scale(1.1);
