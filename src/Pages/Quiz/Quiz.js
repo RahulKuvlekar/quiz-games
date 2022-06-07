@@ -5,11 +5,15 @@ import { db } from "../../Firebase/firebase";
 import "./Quiz.css";
 import Rules from "../../Components/Rules/Rules";
 import QuestionBank from "../../Components/QuestionBank/QuestionBank";
+import { useToastContext } from "../../Hooks/useToastContext";
+import { ADD_TOAST, DANGER } from "../../Constant/constant";
+import { createToast } from "../../Utils/createToast";
 
 const Quiz = () => {
   const [quizData, setQuizData] = useState();
   const [displayRules, setDisplayRules] = useState(true);
   const { queryString } = useParams();
+  const { dispatchToast } = useToastContext();
 
   const categoryID = useMemo(
     () => createSearchParams(queryString).get("categoryID"),
@@ -36,10 +40,17 @@ const Quiz = () => {
           const snapshot = await getDoc(categoryRef);
           setQuizData(snapshot.data());
         } catch (error) {
-          console.log(error);
+          dispatchToast({
+            type: ADD_TOAST,
+            payload: createToast(
+              DANGER,
+              error.message + "please Refresh the page again"
+            ),
+          });
         }
       }
     })();
+    // eslint-disable-next-line
   }, [categoryID, quizID]);
 
   return (
