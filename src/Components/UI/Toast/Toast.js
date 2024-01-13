@@ -51,8 +51,8 @@ const Toast = ({ position, autoDeleteInterval }) => {
 
   return (
     <div className={`notification-container ${position}`}>
-      {toast.length > 0 &&
-        toast.map((notification, i) => {
+      {toast?.length > 0 &&
+        toast?.map((notification, i) => {
           let timer = null;
           if (autoDeleteInterval) {
             timer = setTimeout(() => {
